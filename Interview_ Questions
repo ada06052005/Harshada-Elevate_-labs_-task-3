@@ -1,0 +1,51 @@
+1. What assumptions does linear regression make?
+Linear Regression assumes:
+Linearity: Relationship between independent and dependent variables is linear.
+Independence: Residuals (errors) are independent.
+Homoscedasticity: Constant variance of residuals across all levels of input.
+Normality: Residuals are normally distributed.
+No multicollinearity: Predictors are not too highly correlated with each other.
+
+2. How do you interpret the coefficients?
+Each coefficient represents the change in the output variable (target) for a one-unit change in that predictor, holding all other variables constant.
+Example from our Housing project:
+If the coefficient for area is 135, it means for every additional 1 square foot of area, the predicted price increases by ₹135 (assuming all other features stay the same).
+
+3. What is R² score and its significance?
+R² (Coefficient of Determination) tells how much variance in the dependent variable is explained by the independent variables.
+R² = 1 → Perfect model
+R² = 0 → Model explains nothing
+Significance:
+Higher R² means better model fit and higher predictive power.
+
+4. When would you prefer MSE over MAE?
+We prefer MSE (Mean Squared Error) when:
+We want to penalize larger errors more heavily.
+Our model should care a lot about big mistakes (since MSE squares the errors).
+MAE treats all errors equally — good when you want robust performance against outliers.
+
+5. How do you detect multicollinearity?
+You can detect multicollinearity by:
+Correlation matrix: Check if features have high correlations (e.g., >0.8)
+Variance Inflation Factor (VIF): VIF > 5 or 10 indicates multicollinearity.
+(If multicollinearity exists, you might drop one of the correlated features.)
+
+6. What is the difference between simple and multiple regression?
+Simple Linear Regression:
+1 independent variable predicting 1 dependent variable.
+Multiple Linear Regression:
+
+2 or more independent variables predicting 1 dependent variable.
+In Housing project, we did multiple regression (many features → predict price).
+
+7. Can linear regression be used for classification?
+Normally, no — linear regression is for continuous outputs.
+However:
+Logistic Regression is inspired by Linear Regression but transforms the output to a probability for classification tasks.
+
+8. What happens if you violate regression assumptions?
+Violating assumptions can cause:
+Biased coefficients → wrong conclusions
+Unstable model → high errors
+Poor predictions → model doesn't generalize well
+Inefficient estimators
